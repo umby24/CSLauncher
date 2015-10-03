@@ -18,7 +18,9 @@ namespace CSLauncher {
         public string ResumeUrl { get; set; }
         public bool RememberUsernames { get; set; }
         public bool RememberPasswords { get; set; }
-
+        public bool RememberServers { get; set; }
+        public bool KeepLauncherOpen { get; set; }
+        public int SelectedAccount { get; set; }
         public List<UserAccount> ClassicubeAccounts { get; set; } 
 
         public LauncherPrefs() {

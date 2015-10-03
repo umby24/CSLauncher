@@ -25,14 +25,14 @@
         private void InitializeComponent() {
             this.btnChangeUser = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.columnName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnPlayers = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnUptime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnSoftware = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnConnect = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnPrefs = new System.Windows.Forms.Button();
             this.txtServerUrl = new System.Windows.Forms.TextBox();
-            this.columnName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnPlayers = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnSoftware = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnUptime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // btnChangeUser
@@ -67,6 +67,26 @@
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            // 
+            // columnName
+            // 
+            this.columnName.Text = "Name";
+            this.columnName.Width = 356;
+            // 
+            // columnPlayers
+            // 
+            this.columnPlayers.Text = "Players";
+            // 
+            // columnUptime
+            // 
+            this.columnUptime.DisplayIndex = 3;
+            this.columnUptime.Text = "Uptime";
+            // 
+            // columnSoftware
+            // 
+            this.columnSoftware.DisplayIndex = 2;
+            this.columnSoftware.Text = "Software";
+            this.columnSoftware.Width = 112;
             // 
             // btnConnect
             // 
@@ -118,28 +138,9 @@
             this.txtServerUrl.Size = new System.Drawing.Size(467, 20);
             this.txtServerUrl.TabIndex = 6;
             // 
-            // columnName
-            // 
-            this.columnName.Text = "Name";
-            this.columnName.Width = 356;
-            // 
-            // columnPlayers
-            // 
-            this.columnPlayers.Text = "Players";
-            // 
-            // columnSoftware
-            // 
-            this.columnSoftware.DisplayIndex = 2;
-            this.columnSoftware.Text = "Software";
-            this.columnSoftware.Width = 112;
-            // 
-            // columnUptime
-            // 
-            this.columnUptime.DisplayIndex = 3;
-            this.columnUptime.Text = "Uptime";
-            // 
             // ListForm
             // 
+            this.AcceptButton = this.btnConnect;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CSLauncher.Properties.Resources.ClassiCubeBG;

@@ -4,7 +4,7 @@ using System.IO;
 using System.Windows.Forms;
 
 namespace CSLauncher.Launcher {
-    public class ClassicalSharp {
+    public static class ClassicalSharp {
         private const string ClassicubeSkinServer = "http://www.classicube.net/static/skins/";
         private const string MissingExeMessage = "Failed to start ClassicalSharp. (classicalsharp.exe was not found)";
 
@@ -24,6 +24,19 @@ namespace CSLauncher.Launcher {
 			} else {
 				Process.Start( "ClassicalSharp.exe", args );
 			}
+        }
+
+        public static void LaunchSinglePlayer() {
+            if (!File.Exists("ClassicalSharp.exe")) {
+                MessageBox.Show(MissingExeMessage);
+                return;
+            }
+
+            if (Type.GetType("Mono.Runtime") != null) {
+                Process.Start("mono", "\"ClassicalSharp.exe\" ");
+            } else {
+                Process.Start("ClassicalSharp.exe");
+            }
         }
     }
 }

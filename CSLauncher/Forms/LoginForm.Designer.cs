@@ -76,7 +76,7 @@ namespace CSLauncher.Forms {
             // 
             // btnResume
             // 
-            this.btnResume.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(115)))), ((int)(((byte)(172)))));
+            this.btnResume.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(143)))), ((int)(((byte)(217)))));
             this.btnResume.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.btnResume.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnResume.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -91,7 +91,7 @@ namespace CSLauncher.Forms {
             // 
             // btnSignIn
             // 
-            this.btnSignIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(115)))), ((int)(((byte)(172)))));
+            this.btnSignIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(143)))), ((int)(((byte)(217)))));
             this.btnSignIn.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.btnSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSignIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -116,7 +116,7 @@ namespace CSLauncher.Forms {
             // 
             // btnOptions
             // 
-            this.btnOptions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(115)))), ((int)(((byte)(172)))));
+            this.btnOptions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(143)))), ((int)(((byte)(217)))));
             this.btnOptions.ContextMenuStrip = this.contextMenuStrip1;
             this.btnOptions.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.btnOptions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -142,15 +142,18 @@ namespace CSLauncher.Forms {
             this.directToolStripMenuItem.Name = "directToolStripMenuItem";
             this.directToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.directToolStripMenuItem.Text = "Direct...";
+            this.directToolStripMenuItem.Click += new System.EventHandler(this.directToolStripMenuItem_Click);
             // 
             // singlePlayerToolStripMenuItem
             // 
             this.singlePlayerToolStripMenuItem.Name = "singlePlayerToolStripMenuItem";
             this.singlePlayerToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.singlePlayerToolStripMenuItem.Text = "Single Player";
+            this.singlePlayerToolStripMenuItem.Click += new System.EventHandler(this.singlePlayerToolStripMenuItem_Click);
             // 
             // LoginForm
             // 
+            this.AcceptButton = this.btnSignIn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CSLauncher.Properties.Resources.ClassiCubeBG;

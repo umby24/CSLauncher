@@ -7,7 +7,6 @@ using CSLauncher.Services;
 
 namespace CSLauncher.Forms {
     public partial class LoginForm : Form {
-
         public LoginForm() {
             InitializeComponent();
         }
@@ -61,22 +60,45 @@ namespace CSLauncher.Forms {
         private void btnResume_Click(object sender, EventArgs e) {
             ResumeGame();
         }
+
+        private void btnPrefs_Click(object sender, EventArgs e) {
+            var prefs = new PreferencesForm();
+            prefs.ShowDialog();
+            comboUsername.Text = "";
+            txtPassword.Clear();
+            
+            PopulateUsernames();
+        }
+
+        private void directToolStripMenuItem_Click(object sender, EventArgs e) {
+            var direct = new DirectForm();
+            direct.ShowDialog();
+        }
+
+        private void singlePlayerToolStripMenuItem_Click(object sender, EventArgs e) {
+            ClassicalSharp.LaunchSinglePlayer();
+
+            if (!Preferences.Settings.Launcher.KeepLauncherOpen)
+                Application.Exit();
+        }
         #endregion
 
         #region Form Utility Functions
 
         private void SignIn() {
             var cc = new ClassicubeService(comboUsername.Text, txtPassword.Text);
+
             if (!cc.Login()) {
                 MessageBox.Show("Failed to login, bad username or password?", "ClassicalSharp Launcher",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            Console.WriteLine("Done");
+
             var servers = cc.GetAllServers();
             var list = new ListForm(servers, cc);
-            list.Show();
-            this.Hide();
+            Hide();
+            list.ShowDialog();
+            Show();
         }
 
         private void ResumeGame() {
@@ -95,7 +117,9 @@ namespace CSLauncher.Forms {
             }
 
             ClassicalSharp.Launch(info);
-            Application.Exit();
+
+            if (!Preferences.Settings.Launcher.KeepLauncherOpen)
+                Application.Exit();
         }
 
         private void SaveCredentials() {
@@ -110,7 +134,7 @@ namespace CSLauncher.Forms {
                     Preferences.Settings.Launcher.ClassicubeAccounts.FirstOrDefault(
                         a => a.Username == comboUsername.Text);
 
-            // -- if account is null, create a new one in whichever service we're in. (we're at this point at least saving username)
+            // -- if account is null, create a new one. (we're at this point at least saving username)
             if (account == null) {
                 account = new UserAccount {
                     Username = comboUsername.Text
@@ -121,20 +145,21 @@ namespace CSLauncher.Forms {
             account.Password = Preferences.Settings.Launcher.RememberPasswords ? txtPassword.Text : "";
 
             // -- Now save it to whichever service we're using..
-                if (!newAccount) {
-                    var index =
-                        Preferences.Settings.Launcher.ClassicubeAccounts.FindIndex(a => a.Username == account.Username);
-                    Preferences.Settings.Launcher.ClassicubeAccounts[index] = account;
+            if (!newAccount) {
+                var index =
+                    Preferences.Settings.Launcher.ClassicubeAccounts.FindIndex(a => a.Username == account.Username);
+                Preferences.Settings.Launcher.ClassicubeAccounts[index] = account;
 
-                }
-                else {
-                    Preferences.Settings.Launcher.ClassicubeAccounts.Add(account);
-                }
-            
+            }
+            else {
+                Preferences.Settings.Launcher.ClassicubeAccounts.Add(account);
+            }
 
+            PopulateUsernames(false); // -- Repopulate
+            Preferences.Settings.Launcher.SelectedAccount = comboUsername.SelectedIndex;
             // -- Save it to disk..
             Preferences.Save();
-            PopulateUsernames(false); // -- Repopulate
+            
             // -- And done!
         }
 
@@ -152,8 +177,13 @@ namespace CSLauncher.Forms {
             if (!noSelect)
                 return;
 
-            if (comboUsername.Items.Count > 0)
+            try {
+                if (comboUsername.Items.Count > 0)
+                    comboUsername.SelectedIndex = Preferences.Settings.Launcher.SelectedAccount;
+            }
+            catch {
                 comboUsername.SelectedIndex = 0;
+            }
         }
 
         private void PopulatePassword(int index) {
@@ -167,9 +197,8 @@ namespace CSLauncher.Forms {
         }
         #endregion
 
-        private void btnPrefs_Click(object sender, EventArgs e) {
 
-        }
+
 
 
 

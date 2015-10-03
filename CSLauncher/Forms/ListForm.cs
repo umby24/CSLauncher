@@ -1,21 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Drawing.Text;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using CSLauncher.Launcher;
 using CSLauncher.Services;
 
 namespace CSLauncher.Forms {
     public partial class ListForm : Form {
-        private ClassicubeServer[] _servers;
+        private readonly ClassicubeServer[] _servers;
         private ClassicubeServer[] _filtered;
-        private ClassicubeService _service;
+        private readonly ClassicubeService _service;
 
         public ListForm(ClassicubeServer[] servers, ClassicubeService classicube) {
             InitializeComponent();
@@ -26,7 +19,6 @@ namespace CSLauncher.Forms {
 
         private void ListForm_Load(object sender, EventArgs e) {
             PopulateList();
-            
         }
 
         private void PopulateList() {
@@ -46,14 +38,16 @@ namespace CSLauncher.Forms {
         private void listView1_SelectedIndexChanged(object sender, EventArgs e) {
             if (listView1.SelectedIndices.Count == 0)
                 return;
+
             if (listView1.SelectedIndices[0] > _filtered.Count() - 1)
                 return;
 
-            txtServerUrl.Text = _filtered[listView1.SelectedIndices[0]].Hash;
+            txtServerUrl.Text = "www.classicube.net/server/play/" + _filtered[listView1.SelectedIndices[0]].Hash;
         }
 
         private void btnPrefs_Click(object sender, EventArgs e) {
-
+            var prefs = new PreferencesForm();
+            prefs.ShowDialog();
         }
 
         private void btnConnect_Click(object sender, EventArgs e) {
@@ -61,7 +55,7 @@ namespace CSLauncher.Forms {
         }
 
         private void btnChangeUser_Click(object sender, EventArgs e) {
-
+            Close();
         }
 
         private void LaunchSelected() {
@@ -80,7 +74,16 @@ namespace CSLauncher.Forms {
             };
 
             ClassicalSharp.Launch(info);
-            Application.Exit();
+
+            if (Preferences.Settings.Launcher.RememberServers) {
+                Preferences.Settings.Launcher.ResumeUrl = string.Format("mc://{0}:{1}/{2}/{3}", info.Ip, info.Port,
+                    info.Username, info.Mppass);
+
+                Preferences.Save();
+            }
+
+            if (!Preferences.Settings.Launcher.KeepLauncherOpen)
+                Application.Exit();
         }
     }
 }
