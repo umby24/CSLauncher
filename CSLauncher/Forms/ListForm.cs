@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
 using CSLauncher.Launcher;
@@ -11,12 +9,16 @@ namespace CSLauncher.Forms {
         private readonly ClassicubeServer[] _servers;
         private ClassicubeServer[] _filtered;
         private readonly ClassicubeService _service;
+        private readonly ListViewColumnSorter _lvwColumnSorter;
 
         public ListForm(ClassicubeServer[] servers, ClassicubeService classicube) {
             InitializeComponent();
             _servers = servers;
             _filtered = servers;
             _service = classicube;
+
+            _lvwColumnSorter = new ListViewColumnSorter();
+            listView1.ListViewItemSorter = _lvwColumnSorter;
         }
 
         private void ListForm_Load(object sender, EventArgs e) {
@@ -95,7 +97,18 @@ namespace CSLauncher.Forms {
         }
 
         private void listView1_ColumnClick(object sender, ColumnClickEventArgs e) {
+            // Determine if clicked column is already the column that is being sorted.
+            if (e.Column == _lvwColumnSorter.SortColumn) {
+                // Reverse the current sort direction for this column.
+                _lvwColumnSorter.Order = _lvwColumnSorter.Order == SortOrder.Ascending ? SortOrder.Descending : SortOrder.Ascending;
+            } else {
+                // Set the column number that is to be sorted; default to ascending.
+                _lvwColumnSorter.SortColumn = e.Column;
+                _lvwColumnSorter.Order = SortOrder.Ascending;
+            }
 
+            // Perform the sort with these new sort options.
+            listView1.Sort();
         }
     }
 }

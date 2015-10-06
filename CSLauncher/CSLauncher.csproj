@@ -41,6 +41,7 @@
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Input.Manipulations" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -77,6 +78,7 @@
     </Compile>
     <Compile Include="Launcher\ClassicalSharp.cs" />
     <Compile Include="ConnectionInfo.cs" />
+    <Compile Include="ListViewColumnSorter.cs" />
     <Compile Include="Preferences.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
