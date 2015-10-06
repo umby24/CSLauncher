@@ -37,14 +37,14 @@
             // 
             // btnChangeUser
             // 
-            this.btnChangeUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(143)))), ((int)(((byte)(217)))));
-            this.btnChangeUser.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnChangeUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(130)))), ((int)(((byte)(183)))));
+            this.btnChangeUser.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(115)))), ((int)(((byte)(172)))));
             this.btnChangeUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChangeUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangeUser.Font = new System.Drawing.Font("Source Sans Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChangeUser.ForeColor = System.Drawing.Color.White;
             this.btnChangeUser.Location = new System.Drawing.Point(12, 12);
             this.btnChangeUser.Name = "btnChangeUser";
-            this.btnChangeUser.Size = new System.Drawing.Size(119, 23);
+            this.btnChangeUser.Size = new System.Drawing.Size(119, 32);
             this.btnChangeUser.TabIndex = 1;
             this.btnChangeUser.Text = "<< Change User";
             this.btnChangeUser.UseVisualStyleBackColor = false;
@@ -52,7 +52,8 @@
             // 
             // listView1
             // 
-            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnName,
@@ -90,14 +91,15 @@
             // 
             // btnConnect
             // 
-            this.btnConnect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(143)))), ((int)(((byte)(217)))));
-            this.btnConnect.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnConnect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnConnect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(130)))), ((int)(((byte)(183)))));
+            this.btnConnect.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(115)))), ((int)(((byte)(172)))));
             this.btnConnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConnect.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConnect.Font = new System.Drawing.Font("Source Sans Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConnect.ForeColor = System.Drawing.Color.White;
             this.btnConnect.Location = new System.Drawing.Point(483, 540);
             this.btnConnect.Name = "btnConnect";
-            this.btnConnect.Size = new System.Drawing.Size(119, 23);
+            this.btnConnect.Size = new System.Drawing.Size(119, 32);
             this.btnConnect.TabIndex = 3;
             this.btnConnect.Text = "Connect";
             this.btnConnect.UseVisualStyleBackColor = false;
@@ -117,14 +119,14 @@
             // btnPrefs
             // 
             this.btnPrefs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrefs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(143)))), ((int)(((byte)(217)))));
-            this.btnPrefs.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnPrefs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(130)))), ((int)(((byte)(183)))));
+            this.btnPrefs.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(115)))), ((int)(((byte)(172)))));
             this.btnPrefs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrefs.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrefs.Font = new System.Drawing.Font("Source Sans Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrefs.ForeColor = System.Drawing.Color.White;
             this.btnPrefs.Location = new System.Drawing.Point(483, 12);
             this.btnPrefs.Name = "btnPrefs";
-            this.btnPrefs.Size = new System.Drawing.Size(119, 23);
+            this.btnPrefs.Size = new System.Drawing.Size(119, 32);
             this.btnPrefs.TabIndex = 5;
             this.btnPrefs.Text = "Preferences";
             this.btnPrefs.UseVisualStyleBackColor = false;
@@ -132,8 +134,9 @@
             // 
             // txtServerUrl
             // 
-            this.txtServerUrl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtServerUrl.Location = new System.Drawing.Point(10, 542);
+            this.txtServerUrl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtServerUrl.Location = new System.Drawing.Point(12, 546);
             this.txtServerUrl.Name = "txtServerUrl";
             this.txtServerUrl.Size = new System.Drawing.Size(467, 20);
             this.txtServerUrl.TabIndex = 6;
@@ -143,7 +146,7 @@
             this.AcceptButton = this.btnConnect;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::CSLauncher.Properties.Resources.ClassiCubeBG;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(115)))), ((int)(((byte)(172)))));
             this.ClientSize = new System.Drawing.Size(614, 575);
             this.Controls.Add(this.txtServerUrl);
             this.Controls.Add(this.btnPrefs);

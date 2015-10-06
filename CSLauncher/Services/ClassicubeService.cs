@@ -92,7 +92,7 @@ namespace CSLauncher.Services {
 
             jObj = JToken.Parse(pageData);
 
-            return jObj["errorcount"].Value<int>() <= 0;
+            return jObj["authenticated"].Value<bool>();
         }
 
         public string GetServers() {

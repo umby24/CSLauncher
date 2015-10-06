@@ -21,6 +21,8 @@ namespace CSLauncher.Forms {
             if (comboUsername.SelectedIndex == -1) return;
 
             PopulatePassword(comboUsername.SelectedIndex);
+            Preferences.Settings.Launcher.SelectedAccount = comboUsername.SelectedIndex;
+            Preferences.Save();
         }
 
         private void comboUsername_TextChanged(object sender, EventArgs e) {
@@ -96,7 +98,6 @@ namespace CSLauncher.Forms {
 
             var servers = cc.GetAllServers();
             var list = new ListForm(servers, cc);
-            Hide();
             list.ShowDialog();
             Show();
         }
@@ -125,6 +126,9 @@ namespace CSLauncher.Forms {
         private void SaveCredentials() {
             // -- If we are not saving credentials, skip this.
             if (!Preferences.Settings.Launcher.RememberPasswords && !Preferences.Settings.Launcher.RememberUsernames)
+                return;
+
+            if (string.IsNullOrWhiteSpace(comboUsername.Text))
                 return;
 
             UserAccount account;
@@ -196,6 +200,14 @@ namespace CSLauncher.Forms {
             txtPassword.Text = Preferences.Settings.Launcher.ClassicubeAccounts.ElementAt(index).Password;
         }
         #endregion
+
+        private void txtPassword_Enter(object sender, EventArgs e) {
+            SaveCredentials();
+        }
+
+        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e) {
+        }
+
 
 
 

@@ -38,6 +38,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -83,6 +85,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ResourceDownloader\ResourceCreator.cs" />
+    <Compile Include="ResourceDownloader\ZipHelper.cs" />
     <Compile Include="Services\ClassicubeService.cs" />
     <EmbeddedResource Include="Forms\DirectForm.resx">
       <DependentUpon>DirectForm.cs</DependentUpon>

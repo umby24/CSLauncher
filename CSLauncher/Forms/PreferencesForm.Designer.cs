@@ -37,9 +37,11 @@
             // chkLauncherOpen
             // 
             this.chkLauncherOpen.AutoSize = true;
-            this.chkLauncherOpen.Location = new System.Drawing.Point(12, 12);
+            this.chkLauncherOpen.Font = new System.Drawing.Font("Source Sans Pro", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkLauncherOpen.ForeColor = System.Drawing.Color.White;
+            this.chkLauncherOpen.Location = new System.Drawing.Point(3, 12);
             this.chkLauncherOpen.Name = "chkLauncherOpen";
-            this.chkLauncherOpen.Size = new System.Drawing.Size(128, 17);
+            this.chkLauncherOpen.Size = new System.Drawing.Size(132, 19);
             this.chkLauncherOpen.TabIndex = 0;
             this.chkLauncherOpen.Text = "Keep Launcher Open";
             this.chkLauncherOpen.UseVisualStyleBackColor = true;
@@ -47,9 +49,11 @@
             // chkUsernames
             // 
             this.chkUsernames.AutoSize = true;
-            this.chkUsernames.Location = new System.Drawing.Point(12, 93);
+            this.chkUsernames.Font = new System.Drawing.Font("Source Sans Pro", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkUsernames.ForeColor = System.Drawing.Color.White;
+            this.chkUsernames.Location = new System.Drawing.Point(3, 89);
             this.chkUsernames.Name = "chkUsernames";
-            this.chkUsernames.Size = new System.Drawing.Size(133, 17);
+            this.chkUsernames.Size = new System.Drawing.Size(141, 19);
             this.chkUsernames.TabIndex = 1;
             this.chkUsernames.Text = "Remember Usernames";
             this.chkUsernames.UseVisualStyleBackColor = true;
@@ -57,9 +61,11 @@
             // chkPasswords
             // 
             this.chkPasswords.AutoSize = true;
-            this.chkPasswords.Location = new System.Drawing.Point(12, 122);
+            this.chkPasswords.Font = new System.Drawing.Font("Source Sans Pro", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkPasswords.ForeColor = System.Drawing.Color.White;
+            this.chkPasswords.Location = new System.Drawing.Point(3, 127);
             this.chkPasswords.Name = "chkPasswords";
-            this.chkPasswords.Size = new System.Drawing.Size(131, 17);
+            this.chkPasswords.Size = new System.Drawing.Size(138, 19);
             this.chkPasswords.TabIndex = 2;
             this.chkPasswords.Text = "Remember Passwords";
             this.chkPasswords.UseVisualStyleBackColor = true;
@@ -67,23 +73,25 @@
             // chkServers
             // 
             this.chkServers.AutoSize = true;
-            this.chkServers.Location = new System.Drawing.Point(12, 151);
+            this.chkServers.Font = new System.Drawing.Font("Source Sans Pro", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkServers.ForeColor = System.Drawing.Color.White;
+            this.chkServers.Location = new System.Drawing.Point(3, 165);
             this.chkServers.Name = "chkServers";
-            this.chkServers.Size = new System.Drawing.Size(168, 17);
+            this.chkServers.Size = new System.Drawing.Size(177, 19);
             this.chkServers.TabIndex = 3;
             this.chkServers.Text = "Remember Last Joined Server";
             this.chkServers.UseVisualStyleBackColor = true;
             // 
             // btnForgetUsernames
             // 
-            this.btnForgetUsernames.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(143)))), ((int)(((byte)(217)))));
-            this.btnForgetUsernames.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnForgetUsernames.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(130)))), ((int)(((byte)(183)))));
+            this.btnForgetUsernames.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(115)))), ((int)(((byte)(172)))));
             this.btnForgetUsernames.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnForgetUsernames.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnForgetUsernames.Font = new System.Drawing.Font("Source Sans Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnForgetUsernames.ForeColor = System.Drawing.Color.White;
-            this.btnForgetUsernames.Location = new System.Drawing.Point(186, 89);
+            this.btnForgetUsernames.Location = new System.Drawing.Point(186, 80);
             this.btnForgetUsernames.Name = "btnForgetUsernames";
-            this.btnForgetUsernames.Size = new System.Drawing.Size(136, 23);
+            this.btnForgetUsernames.Size = new System.Drawing.Size(136, 32);
             this.btnForgetUsernames.TabIndex = 4;
             this.btnForgetUsernames.Text = "Forget Usernames";
             this.btnForgetUsernames.UseVisualStyleBackColor = false;
@@ -91,14 +99,14 @@
             // 
             // btnForgetPasswords
             // 
-            this.btnForgetPasswords.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(143)))), ((int)(((byte)(217)))));
-            this.btnForgetPasswords.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnForgetPasswords.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(130)))), ((int)(((byte)(183)))));
+            this.btnForgetPasswords.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(115)))), ((int)(((byte)(172)))));
             this.btnForgetPasswords.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnForgetPasswords.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnForgetPasswords.Font = new System.Drawing.Font("Source Sans Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnForgetPasswords.ForeColor = System.Drawing.Color.White;
             this.btnForgetPasswords.Location = new System.Drawing.Point(186, 118);
             this.btnForgetPasswords.Name = "btnForgetPasswords";
-            this.btnForgetPasswords.Size = new System.Drawing.Size(136, 23);
+            this.btnForgetPasswords.Size = new System.Drawing.Size(136, 32);
             this.btnForgetPasswords.TabIndex = 5;
             this.btnForgetPasswords.Text = "Forget Passwords";
             this.btnForgetPasswords.UseVisualStyleBackColor = false;
@@ -106,14 +114,14 @@
             // 
             // btnForgetServer
             // 
-            this.btnForgetServer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(143)))), ((int)(((byte)(217)))));
-            this.btnForgetServer.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnForgetServer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(130)))), ((int)(((byte)(183)))));
+            this.btnForgetServer.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(115)))), ((int)(((byte)(172)))));
             this.btnForgetServer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnForgetServer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnForgetServer.Font = new System.Drawing.Font("Source Sans Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnForgetServer.ForeColor = System.Drawing.Color.White;
-            this.btnForgetServer.Location = new System.Drawing.Point(186, 147);
+            this.btnForgetServer.Location = new System.Drawing.Point(186, 156);
             this.btnForgetServer.Name = "btnForgetServer";
-            this.btnForgetServer.Size = new System.Drawing.Size(136, 23);
+            this.btnForgetServer.Size = new System.Drawing.Size(136, 32);
             this.btnForgetServer.TabIndex = 6;
             this.btnForgetServer.Text = "Forget Server";
             this.btnForgetServer.UseVisualStyleBackColor = false;
@@ -121,14 +129,14 @@
             // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(143)))), ((int)(((byte)(217)))));
-            this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(130)))), ((int)(((byte)(183)))));
+            this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(115)))), ((int)(((byte)(172)))));
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Font = new System.Drawing.Font("Source Sans Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(146, 223);
+            this.btnSave.Location = new System.Drawing.Point(146, 217);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(85, 23);
+            this.btnSave.Size = new System.Drawing.Size(85, 32);
             this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -136,14 +144,14 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(143)))), ((int)(((byte)(217)))));
-            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(130)))), ((int)(((byte)(183)))));
+            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(115)))), ((int)(((byte)(172)))));
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Font = new System.Drawing.Font("Source Sans Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(237, 223);
+            this.btnCancel.Location = new System.Drawing.Point(237, 217);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(85, 23);
+            this.btnCancel.Size = new System.Drawing.Size(85, 32);
             this.btnCancel.TabIndex = 8;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -153,7 +161,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::CSLauncher.Properties.Resources.ClassiCubeBG;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(115)))), ((int)(((byte)(172)))));
             this.ClientSize = new System.Drawing.Size(334, 256);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);

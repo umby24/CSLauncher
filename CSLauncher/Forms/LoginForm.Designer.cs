@@ -42,14 +42,15 @@ namespace CSLauncher.Forms {
             // 
             // btnPrefs
             // 
-            this.btnPrefs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(143)))), ((int)(((byte)(217)))));
-            this.btnPrefs.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnPrefs.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnPrefs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(130)))), ((int)(((byte)(183)))));
+            this.btnPrefs.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(115)))), ((int)(((byte)(172)))));
             this.btnPrefs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrefs.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrefs.Font = new System.Drawing.Font("Source Sans Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrefs.ForeColor = System.Drawing.Color.White;
-            this.btnPrefs.Location = new System.Drawing.Point(105, 154);
+            this.btnPrefs.Location = new System.Drawing.Point(131, 132);
             this.btnPrefs.Name = "btnPrefs";
-            this.btnPrefs.Size = new System.Drawing.Size(85, 23);
+            this.btnPrefs.Size = new System.Drawing.Size(90, 29);
             this.btnPrefs.TabIndex = 0;
             this.btnPrefs.Text = "Preferences";
             this.btnPrefs.UseVisualStyleBackColor = false;
@@ -57,33 +58,37 @@ namespace CSLauncher.Forms {
             // 
             // comboUsername
             // 
+            this.comboUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.comboUsername.FormattingEnabled = true;
-            this.comboUsername.Location = new System.Drawing.Point(12, 101);
+            this.comboUsername.Location = new System.Drawing.Point(4, 79);
             this.comboUsername.Name = "comboUsername";
-            this.comboUsername.Size = new System.Drawing.Size(268, 21);
+            this.comboUsername.Size = new System.Drawing.Size(332, 21);
             this.comboUsername.TabIndex = 2;
             this.comboUsername.SelectedIndexChanged += new System.EventHandler(this.comboUsername_SelectedIndexChanged);
             this.comboUsername.TextChanged += new System.EventHandler(this.comboUsername_TextChanged);
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(12, 128);
+            this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPassword.Location = new System.Drawing.Point(4, 106);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(268, 20);
+            this.txtPassword.Size = new System.Drawing.Size(332, 20);
             this.txtPassword.TabIndex = 3;
             this.txtPassword.UseSystemPasswordChar = true;
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
+            this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
             // 
             // btnResume
             // 
-            this.btnResume.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(143)))), ((int)(((byte)(217)))));
-            this.btnResume.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnResume.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnResume.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(130)))), ((int)(((byte)(183)))));
+            this.btnResume.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(115)))), ((int)(((byte)(172)))));
             this.btnResume.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnResume.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResume.Font = new System.Drawing.Font("Source Sans Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnResume.ForeColor = System.Drawing.Color.White;
-            this.btnResume.Location = new System.Drawing.Point(12, 154);
+            this.btnResume.Location = new System.Drawing.Point(4, 132);
             this.btnResume.Name = "btnResume";
-            this.btnResume.Size = new System.Drawing.Size(66, 23);
+            this.btnResume.Size = new System.Drawing.Size(84, 29);
             this.btnResume.TabIndex = 4;
             this.btnResume.Text = "Resume";
             this.btnResume.UseVisualStyleBackColor = false;
@@ -91,14 +96,15 @@ namespace CSLauncher.Forms {
             // 
             // btnSignIn
             // 
-            this.btnSignIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(143)))), ((int)(((byte)(217)))));
-            this.btnSignIn.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnSignIn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSignIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(130)))), ((int)(((byte)(183)))));
+            this.btnSignIn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(115)))), ((int)(((byte)(172)))));
             this.btnSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSignIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSignIn.Font = new System.Drawing.Font("Source Sans Pro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignIn.ForeColor = System.Drawing.Color.White;
-            this.btnSignIn.Location = new System.Drawing.Point(205, 154);
+            this.btnSignIn.Location = new System.Drawing.Point(248, 132);
             this.btnSignIn.Name = "btnSignIn";
-            this.btnSignIn.Size = new System.Drawing.Size(75, 23);
+            this.btnSignIn.Size = new System.Drawing.Size(88, 29);
             this.btnSignIn.TabIndex = 5;
             this.btnSignIn.Text = "Sign In >";
             this.btnSignIn.UseVisualStyleBackColor = false;
@@ -106,24 +112,27 @@ namespace CSLauncher.Forms {
             // 
             // serviceImage
             // 
+            this.serviceImage.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.serviceImage.BackColor = System.Drawing.Color.Transparent;
             this.serviceImage.Image = global::CSLauncher.Properties.Resources.ClassiCubeLogo;
-            this.serviceImage.Location = new System.Drawing.Point(12, 12);
+            this.serviceImage.Location = new System.Drawing.Point(44, 6);
             this.serviceImage.Name = "serviceImage";
-            this.serviceImage.Size = new System.Drawing.Size(268, 83);
+            this.serviceImage.Size = new System.Drawing.Size(241, 67);
             this.serviceImage.TabIndex = 6;
             this.serviceImage.TabStop = false;
             // 
             // btnOptions
             // 
-            this.btnOptions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(143)))), ((int)(((byte)(217)))));
+            this.btnOptions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnOptions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(130)))), ((int)(((byte)(183)))));
             this.btnOptions.ContextMenuStrip = this.contextMenuStrip1;
-            this.btnOptions.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnOptions.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(115)))), ((int)(((byte)(172)))));
             this.btnOptions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOptions.Font = new System.Drawing.Font("Source Sans Pro", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOptions.ForeColor = System.Drawing.Color.White;
-            this.btnOptions.Location = new System.Drawing.Point(74, 154);
+            this.btnOptions.Location = new System.Drawing.Point(81, 132);
             this.btnOptions.Name = "btnOptions";
-            this.btnOptions.Size = new System.Drawing.Size(16, 23);
+            this.btnOptions.Size = new System.Drawing.Size(18, 29);
             this.btnOptions.TabIndex = 7;
             this.btnOptions.Text = "▼";
             this.btnOptions.UseVisualStyleBackColor = false;
@@ -156,8 +165,8 @@ namespace CSLauncher.Forms {
             this.AcceptButton = this.btnSignIn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::CSLauncher.Properties.Resources.ClassiCubeBG;
-            this.ClientSize = new System.Drawing.Size(292, 187);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(115)))), ((int)(((byte)(172)))));
+            this.ClientSize = new System.Drawing.Size(339, 167);
             this.Controls.Add(this.btnOptions);
             this.Controls.Add(this.serviceImage);
             this.Controls.Add(this.btnSignIn);
@@ -165,8 +174,10 @@ namespace CSLauncher.Forms {
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.comboUsername);
             this.Controls.Add(this.btnPrefs);
+            this.MinimumSize = new System.Drawing.Size(347, 195);
             this.Name = "LoginForm";
-            this.Text = "ClassicalSharp Launcher";
+            this.Text = "ClassicalSharp Launcher b1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginForm_FormClosing);
             this.Load += new System.EventHandler(this.LoginForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.serviceImage)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
