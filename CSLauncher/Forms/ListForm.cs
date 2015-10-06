@@ -87,5 +87,9 @@ namespace CSLauncher.Forms {
             if (!Preferences.Settings.Launcher.KeepLauncherOpen)
                 Application.Exit();
         }
+
+        private void listView1_DoubleClick(object sender, EventArgs e) {
+            LaunchSelected();
+        }
     }
 }
