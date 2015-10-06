@@ -27,7 +27,7 @@ namespace CSLauncher.Forms {
             listView1.Items.Clear();
 
             foreach (var server in _filtered) {
-                string[] row = { server.Name, server.OnlinePlayers + "/" + server.MaxPlayers, server.Uptime.ToString(), server.Software };
+                string[] row = { server.Name, server.OnlinePlayers + "/" + server.MaxPlayers, (server.Uptime / 60).ToString(), server.Software };
                 listView1.Items.Add(new ListViewItem(row));
             }
         }

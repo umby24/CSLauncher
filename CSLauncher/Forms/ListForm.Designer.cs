@@ -60,10 +60,12 @@
             this.columnPlayers,
             this.columnUptime,
             this.columnSoftware});
+            this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
             this.listView1.Location = new System.Drawing.Point(10, 85);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(592, 449);
+            this.listView1.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listView1.TabIndex = 2;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;

@@ -135,6 +135,7 @@ namespace CSLauncher.Services {
                     Mppass = jsonObj[i]["mppass"].Value<string>(),
                     Name = jsonObj[i]["name"].Value<string>(),
                     Software = jsonObj[i]["software"].Value<string>(),
+                    Uptime = jsonObj[i]["uptime"].Value<int>()
                 };
             }
 
