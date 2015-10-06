@@ -19,6 +19,8 @@ namespace CSLauncher.Forms {
 
         private void ListForm_Load(object sender, EventArgs e) {
             PopulateList();
+            Program.SetWatermark(txtSearch, "Search...");
+            Program.SetWatermark(txtServerUrl, "Server URL");
         }
 
         private void PopulateList() {

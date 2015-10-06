@@ -35,6 +35,7 @@ namespace CSLauncher.Forms {
 
         private void DirectForm_Load(object sender, EventArgs e) {
             textBox1.Text = Preferences.Settings.Launcher.ResumeUrl;
+            Program.SetWatermark(textBox1, "mc://ip:port/username/mppass");
         }
     }
 }

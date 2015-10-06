@@ -14,6 +14,8 @@ namespace CSLauncher.Forms {
         private void LoginForm_Load(object sender, EventArgs e) {
             Preferences.Load();
             PopulateUsernames();
+            Program.SetWatermark(comboUsername, "Username...");
+            Program.SetWatermark(txtPassword, "Password...");
         }
 
         #region Buttom Clicks
