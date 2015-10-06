@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
 using CSLauncher.Launcher;
@@ -33,7 +35,7 @@ namespace CSLauncher.Forms {
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e) {
-            _filtered = _servers.Where(a => a.Name.Contains(txtSearch.Text)).ToArray();
+            _filtered = _servers.Where(a => a.Name.IndexOf(txtSearch.Text, 0, StringComparison.CurrentCultureIgnoreCase) != -1).ToArray();
             PopulateList();
         }
 
@@ -90,6 +92,10 @@ namespace CSLauncher.Forms {
 
         private void listView1_DoubleClick(object sender, EventArgs e) {
             LaunchSelected();
+        }
+
+        private void listView1_ColumnClick(object sender, ColumnClickEventArgs e) {
+
         }
     }
 }
