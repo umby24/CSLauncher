@@ -5,8 +5,17 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.IO.Compression;
 using System.Net;
+using System.Security.Cryptography.X509Certificates;
+using System.Threading.Tasks;
 
 namespace CSLauncher.ResourceDownloader {
+    public class ProgressReport {
+        public string Message { get; set; }
+        public int Current { get; set; }
+        public int Max { get; set; }
+        public bool Complete { get; set; }
+    }
+
     public class ResourceCreator {
         const string ClassicJarUri = "http://s3.amazonaws.com/Minecraft.Download/versions/c0.30_01c/c0.30_01c.jar";
         const string ModernJarUri = "http://s3.amazonaws.com/Minecraft.Download/versions/1.6.2/1.6.2.jar";
@@ -31,6 +40,101 @@ namespace CSLauncher.ResourceDownloader {
 # fire
 6 2 0 32 16 32 0";
 #endregion
+
+        public async void GetResourcesAsync(IProgress<ProgressReport> progress) {
+            if (File.Exists("default.zip"))
+                return;
+
+            var report = new ProgressReport {
+                Message = "Downloading Minecraft Resources...",
+                Max = 100,
+                Current = 0,
+                Complete = false
+            };
+            var downloader = new WebClient();
+            downloader.DownloadProgressChanged += (sender, args) => { report.Current = args.ProgressPercentage; };
+            Task task;
+
+            if (!File.Exists("classic.jar")) {
+                report.Message = "Downloading classic.jar";
+                progress.Report(report);
+                task = downloader.DownloadFileTaskAsync(new Uri(ClassicJarUri), "classic.jar");
+
+                while (!task.IsCompleted) {
+                    progress.Report(report);
+                    await Task.Delay(100);
+                }
+            }
+
+            if (!File.Exists("1.6.2.jar")) {
+                report.Message = "Downloading 1.6.2.jar";
+                progress.Report(report);
+                task = downloader.DownloadFileTaskAsync(new Uri(ModernJarUri), "1.6.2.jar");
+
+                while (!task.IsCompleted) {
+                    progress.Report(report);
+                    await Task.Delay(100);
+                }
+            }
+
+            if (!File.Exists("terrain-patch.png")) {
+                report.Message = "Downloading terrain-patch.png";
+                progress.Report(report);
+                task = downloader.DownloadFileTaskAsync(new Uri(TerrainPatchUri), "terrain-patch.png");
+
+                while (!task.IsCompleted) {
+                    progress.Report(report);
+                    await Task.Delay(100);
+                }
+            }
+
+            
+
+            if (Directory.Exists("DefaultZip"))
+                Directory.Delete("DefaultZip", true);
+
+            Directory.CreateDirectory("DefaultZip");
+
+            var animBitmap = new Bitmap(1024, 64, PixelFormat.Format32bppArgb);
+
+            report.Message = "Processing files...(1/3)";
+            report.Max = 3;
+            progress.Report(report);
+
+            ProcessClassicJar();
+
+            report.Message = "Processing files...(2/3)";
+            report.Current = 1;
+            progress.Report(report);
+
+            ProcessModernJar(animBitmap);
+            report.Message = "Processing files...(3/3)";
+            report.Current = 2;
+            progress.Report(report);
+            PatchTerrain();
+
+            report.Message = "Saving files...";
+            report.Current = 3;
+            progress.Report(report);
+
+            File.WriteAllText(Path.Combine("DefaultZip", "animations.txt"), AnimationsTxt);
+            animBitmap.Save(Path.Combine("DefaultZip", "animations.png"), ImageFormat.Png);
+            ZipFile.CreateFromDirectory("DefaultZip", "default.zip");
+
+            // -- Cleanup!
+            try {
+                Directory.Delete("classicjar", true);
+                Directory.Delete("DefaultZip", true);
+                Directory.Delete("modernjar", true);
+            }
+            catch {
+            }
+            finally {
+                // Meh
+            }
+            report.Complete = true;
+            progress.Report(report);
+        }
 
         public void GetResources() {
             if (File.Exists("default.zip"))

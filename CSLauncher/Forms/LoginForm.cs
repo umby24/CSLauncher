@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
 using CSLauncher.Launcher;
 using CSLauncher.Services;
@@ -8,6 +10,16 @@ using CSLauncher.Services;
 namespace CSLauncher.Forms {
     public partial class LoginForm : Form {
         public LoginForm() {
+            if (!File.Exists("default.zip")) {
+                var result = MessageBox.Show("Some required resources are missing, would you like to download them?",
+                    "ClassicalSharp Launcher", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes) {
+                    var downloadForm = new DownloadForm();
+                    downloadForm.ShowDialog();
+                }
+            }
+
             InitializeComponent();
         }
 

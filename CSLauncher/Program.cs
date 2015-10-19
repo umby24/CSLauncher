@@ -2,7 +2,6 @@
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using CSLauncher.Forms;
-using CSLauncher.ResourceDownloader;
 
 namespace CSLauncher {
     static class Program {
@@ -19,8 +18,6 @@ namespace CSLauncher {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            var rc = new ResourceCreator();
-            rc.GetResources();
             Application.Run(new LoginForm());
         }
 

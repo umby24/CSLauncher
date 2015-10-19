@@ -180,7 +180,7 @@ namespace CSLauncher.Forms {
             this.Controls.Add(this.btnPrefs);
             this.MinimumSize = new System.Drawing.Size(347, 195);
             this.Name = "LoginForm";
-            this.Text = "ClassicalSharp Launcher b1";
+            this.Text = "ClassicalSharp Launcher b3";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginForm_FormClosing);
             this.Load += new System.EventHandler(this.LoginForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.serviceImage)).EndInit();
